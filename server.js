@@ -1,12 +1,15 @@
+//Install express server
 const express = require('express');
 const path = require('path');
 
-const app = express()
+const app = express();
 
-app.use(express.static('./dist/quick-start-angular'))
+// Serve only the static files form the dist directory
+app.use(express.static('./dist/quick-start-angular'));
 
-app.get('/*', (req, resp) =>
-    resp.sendFile("index.html", {root: 'dist/quick-start-angular'})
+app.get('/*', (req, res) =>
+    res.sendFile('index.html', {root: 'dist/quick-start-angular/'}),
 );
 
-app.listen(process.env.PORT || 8080)
+// Start the app by listening on the default Heroku port
+app.listen(process.env.PORT || 8080);
