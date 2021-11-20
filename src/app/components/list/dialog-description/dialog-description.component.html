@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Details about holder</h1>
+<div mat-dialog-content>
+  <span>
+    <h2>Title</h2>
+    <p>{{data.title}}</p>
+  </span>
+
+  <span>
+    <h2>Body</h2>
+    <p>{{data.body}}</p>
+  </span>
+</div>
+<div mat-dialog-actions>
+  <div>
+    <button mat-button (click)="onNoClick()">
+      <mat-icon>close</mat-icon>
+      Close
+    </button>
+  </div>
+</div>

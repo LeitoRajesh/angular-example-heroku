@@ -1,0 +1,49 @@
+<mat-card class="example-card">
+  <br/>
+  <mat-card-title>Edit Holder</mat-card-title>
+  <br/>
+  <br/>
+  <div class="example-button-row">
+    <div class="example-flex-container">
+      <div class="example-button-container" style="text-align: right">
+
+        <span color="primary" style="font-weight: bolder;">Listing Holders   </span>
+        <button mat-mini-fab color="basic" style="margin-right: 50px !important;" matTooltip="Listing Holders"
+                (click)="goTolist()">
+          <mat-icon>home</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <br/>
+
+  <mat-tab-group selectedIndex="1">
+    <br/><br/>
+    <mat-tab label="Registration" disabled>
+    </mat-tab>
+    <mat-tab label="Edition" >
+      <div class="example-form">
+        <form [formGroup]="form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Your Title" formControlName="title">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Body</mat-label>
+            <textarea matInput #message placeholder="Ex. It makes me feel..." formControlName="body" maxlength="2000"></textarea>
+            <mat-hint align="end">{{message.value.length}} / 2000</mat-hint>
+          </mat-form-field>
+
+          <div align="right">
+            <br/>
+            <button mat-fab color="primary" (click)="updateItem()" class="">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
